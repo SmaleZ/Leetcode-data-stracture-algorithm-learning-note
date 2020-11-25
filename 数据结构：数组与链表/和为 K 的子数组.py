@@ -19,3 +19,18 @@ class Solution:
                 subSum.update({presum : 1})
         
         return res
+    
+    //经过优化，执行用时更少
+    class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        subSum = {}
+        subSum.update({0 : 1})
+        presum = 0
+        res = 0
+        for num in nums:
+            presum += num
+            if(presum-k in subSum):
+                res += subSum[presum-k]
+            // subSum.get 如果字典里有该value则返回, 如果没有则返回0
+            subSum[presum] =subSum.get(presum,0) + 1        
+        return res
