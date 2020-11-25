@@ -10,6 +10,8 @@ class Solution:
         left = 0
         right = 1
         n = len(nums)
+        if(n<2):
+            return n
         while(right < n):
             if(nums[left] == nums[right]):
                 right += 1
