@@ -13,6 +13,7 @@ class Solution:
         prev = tail.next
         p = head
         while prev != tail:
+            //开辟临时node 保存
             nex = p.next
             p.next = prev
             prev = p
@@ -31,6 +32,7 @@ class Solution:
                 tail = tail.next
                 if not tail:
                     return hair.next
+            //开辟临时node 保存
             nex = tail.next
             head, tail = self.reverse(head, tail)
             # 把子链表重新接回原链表
